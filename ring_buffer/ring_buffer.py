@@ -8,17 +8,32 @@ class RingBuffer:
         self.storage = DoublyLinkedList()
 
     def append(self, item):
-        pass
+        self.storage.add_to_tail(item)
 
     def get(self):
         # Note:  This is the only [] allowed
         list_buffer_contents = []
 
-        # TODO: Your code here
+        # TODO: Your code here. Traverse through linked list
+        
+        # append head
+        current_element = self.storage.head
+        while current_element:
+            list_buffer_contents.append(current_element.value)
+            current_element = current_element.next
 
         return list_buffer_contents
 
+testing_ring_buffer = RingBuffer(5)
+testing_ring_buffer.append(6)
+testing_ring_buffer.append(7)
+testing_ring_buffer.append(10)
+print(testing_ring_buffer.__dict__)
+# print(testing_ring_buffer.storage.head.__dict__)
+print(testing_ring_buffer.get())
+
 # ----------------Stretch Goal-------------------
+
 
 
 class ArrayRingBuffer:
