@@ -4,15 +4,14 @@ from doubly_linked_list import DoublyLinkedList
 class RingBuffer:
     def __init__(self, capacity):
         self.capacity = capacity
-        self.current = None
+        self.current = 0
         self.storage = DoublyLinkedList()
 
     def append(self, item):
 
         # If storage is not at capacity, add to tail and update current
-        if len(self.storage) < self.capacity:
-            # if self.current == None:
-            #     self.current = self.storage.tail
+        if self.current < self.capacity:
+            self.current += 1
         # If at capacity, add to tail and remove from head
         else:
             self.storage.remove_from_head()
@@ -29,16 +28,16 @@ class RingBuffer:
 
         return list_buffer_contents
 
-testing_ring_buffer = RingBuffer(3)
-testing_ring_buffer.append(6)
-testing_ring_buffer.append(7)
-testing_ring_buffer.append(10)
-testing_ring_buffer.append(15)
-testing_ring_buffer.append(14)
-testing_ring_buffer.append(24)
-print(testing_ring_buffer.__dict__)
-# print(testing_ring_buffer.storage.head.__dict__)
-print(testing_ring_buffer.get())
+# testing_ring_buffer = RingBuffer(3)
+# testing_ring_buffer.append(6)
+# testing_ring_buffer.append(7)
+# testing_ring_buffer.append(10)
+# testing_ring_buffer.append(15)
+# testing_ring_buffer.append(14)
+# testing_ring_buffer.append(24)
+# print(testing_ring_buffer.__dict__)
+# # print(testing_ring_buffer.storage.head.__dict__)
+# print(testing_ring_buffer.get())
 
 # ----------------Stretch Goal-------------------
 

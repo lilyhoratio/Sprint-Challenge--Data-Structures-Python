@@ -48,6 +48,7 @@ class LinkedList:
     next_ = None
 
     while current is not None:
+    # while current:
       next_ = current.next_node
       previous = current
       current = next_
