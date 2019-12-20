@@ -11,8 +11,8 @@ class RingBuffer:
 
         # If storage is not at capacity, add to tail and update current
         if len(self.storage) < self.capacity:
-            if self.current == None:
-                self.current = self.storage.tail
+            # if self.current == None:
+            #     self.current = self.storage.tail
         # If at capacity, add to tail and remove from head
         else:
             self.storage.remove_from_head()
@@ -21,10 +21,7 @@ class RingBuffer:
     def get(self):
         # Note:  This is the only [] allowed
         list_buffer_contents = []
-
-        # TODO: Your code here. Traverse through linked list
         
-        # append head
         current_element = self.storage.head
         while current_element:
             list_buffer_contents.append(current_element.value)
