@@ -28,16 +28,17 @@ class RingBuffer:
 
         return list_buffer_contents
 
-# testing_ring_buffer = RingBuffer(3)
-# testing_ring_buffer.append(6)
-# testing_ring_buffer.append(7)
-# testing_ring_buffer.append(10)
-# testing_ring_buffer.append(15)
-# testing_ring_buffer.append(14)
-# testing_ring_buffer.append(24)
-# print(testing_ring_buffer.__dict__)
-# # print(testing_ring_buffer.storage.head.__dict__)
-# print(testing_ring_buffer.get())
+testing_ring_buffer = RingBuffer(3)
+testing_ring_buffer.append(6)
+testing_ring_buffer.append(7)
+testing_ring_buffer.append(10)
+testing_ring_buffer.append(15)
+testing_ring_buffer.append(14)
+testing_ring_buffer.append(24)
+print(testing_ring_buffer.__dict__)
+# print(testing_ring_buffer.storage.head.__dict__)
+print(testing_ring_buffer.get())
+print(testing_ring_buffer.current)
 
 # ----------------Stretch Goal-------------------
 
